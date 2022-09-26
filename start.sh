@@ -13,14 +13,14 @@ ClientName=$(who | awk '{print $1}')
 ClientIP=$(who | awk '{print $5}')
 ISIMMSGServerName="<ITIM-MSG-PRI>"
 ISIMAPPServerName="<ITIM-APP-PRI>"
-ProfileName="<ProfileName>"
+ProfileName="<Custom01>"
 echo " ==================================================================== "
 echo "					Please Wait..."
 echo " ==================================================================== "
 kill -9 $(ps aux | grep '[j]ava' | awk '{print $2}')
 sleep 5
 echo " ======================== Starting NodeAgent on this Managed Node! ======================== "
-/opt/IBM/WebSphere/AppServer/profiles/<Profile_Name>/bin/startNode.sh
+/opt/IBM/WebSphere/AppServer/profiles/${ProfileName}/bin/startNode.sh
 echo " ======================== Done with Starting NodeAgent ======================== "
 echo ""
 sleep 2
